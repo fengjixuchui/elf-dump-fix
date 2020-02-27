@@ -2,7 +2,7 @@
 This resp include two utils
 
 - dump  
-  - Run on android, can dump elf from a process memory and fix it, Rebuild the Section Header for better IDA analysis.
+  - Run on android, can dump ELF from a process memory and fix it, Rebuild the Section Header for better IDA analysis.
 - sofix
   - Run on PC, can fix an ELF file dumped from memory and an build the Section Header for better IDA analysis.
 
@@ -52,3 +52,8 @@ The main target is to rebuild the Section Header of an ELF by memory dumped.Usef
         ```
      - ./dump 1148 0x40105000 0x40160000 ./out.so 0 1
        - dump to 40160000 not 40152000 is because the ELF .bss memory if exist should be dump too, the fix process depends on it.
+  
+## Compare between no-fix and fixed ELF
+![](imgs/no-fix.png)
+![](imgs/fix.png)
+
